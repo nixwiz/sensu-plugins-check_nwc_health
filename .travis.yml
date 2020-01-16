@@ -1,0 +1,17 @@
+language: generic
+os: linux
+services:
+- docker
+script:
+- ./build.sh
+deploy:
+  - provider: script
+    script: bash ./checksum.sh
+    on:
+      tags: true
+  - provider: script
+    script: bash ./upload.sh
+    on:
+      tags: true
+env:
+  global:

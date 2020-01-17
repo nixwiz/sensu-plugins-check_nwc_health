@@ -5,15 +5,16 @@ services:
 script:
 - ./build.sh
 deploy:
-  skip_cleanup: true
-  provider: script
-  script: bash ./checksum.sh
-  on:
-    tags: true
-  provider: script
-  script: bash ./upload.sh
-  on:
-    tags: true
+  - provider: script
+    script: bash ./checksum.sh
+    on:
+      tags: true
+    skip_cleanup: true
+  - provider: script
+    script: bash ./upload.sh
+    on:
+      tags: true
+    skip_cleanup: true
 env:
   global:
     secure: "pk1KTbpExnkI9j8+jcDwiqnB7PAvgNxKnUaTKogxWhnj6LvGByCmhzpaUiA8z0VS133e59enx9HftWG+699T5Kv1IOPcEogxEvmEoSqhO8Lok00MkJjKuqDWrDRw2Z4Gjjo93evLbZ9yH/ybsyUC1DKRkMkk9mL9EXiHWkTkFnyAfcCxl4AbKms7lDndfovErzDFYQ0hoNRwzbyfBUsg24Z/kTOJrOkhixY416PhRrIBH+YuWh1zbI9FRVSLGYEmiN1jV96MocZXRFjvMhGdB3Rn/gO/kHYBDemGRAEnRzkeHHQRiX1bPAf8W4QRH11ZVNzf1OgJz9Qe/ZvRNs5dw2T95XJEtQtvOmVHwW7x5AJfttvWUaN0/eJVBZ84wgReJiHhiR2yGW8D1bD5AR4MA9KTgUJn32tviwztRzv+QdFfqEUXfVH8P7jlHtkoaKqwq/ovN/yVfRD0InJXcfoaOAp0Qzaz9beNpqBxwvPgaXgA9hycesmVXyuQc5UUb74z6Hk2s5qK9e3ujOQFRtLV6XpY1FPZDvfHc8Dpi4oUDTYfZsO8Rp1+L8+mtEiyzGGPc9NlfaSO61PKT5S8fWLrEs+K/YABso92CXvx60fShiTChep6zgGTUa3lBPNtH8Qg7eWZnZwVpQA6Cm1Ff96DvKNrJNfliFTAXKKA7QlC4mY="

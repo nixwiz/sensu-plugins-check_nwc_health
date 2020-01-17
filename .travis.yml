@@ -4,6 +4,7 @@ services:
 - docker
 script:
 - ./build.sh
+- ./checksum.sh
 deploy:
   skip_cleanup: true
   provider: script

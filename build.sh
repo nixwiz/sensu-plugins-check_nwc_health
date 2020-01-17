@@ -11,6 +11,7 @@ if [ "${asset_version}" = "local-build" ]; then
   ignore_errors=1
 fi
 
+test -d ${PWD}/dist || mkdir ${PWD}/dist
 echo "Check for asset file: ${asset_filename}"
 if [ -f "$PWD/dist/${asset_filename}" ]; then
   echo "File: "$PWD/dist/${asset_filename}" already exists!!!"

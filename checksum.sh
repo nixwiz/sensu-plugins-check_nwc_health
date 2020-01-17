@@ -4,9 +4,12 @@ files=( dist/*.tar.gz )
 file=$(basename "${files[0]}")
 
 version=${TRAVIS_TAG:-local-build}
-project=$(echo $file | sed -e "s/_$version.*$//")
+project=$(echo $file | sed -e "s/_${version}.*$//")
+echo $version
+echo $project
 
 sha512_file="${project}_${version}_sha512-checksums.txt"
+echo $sha512_file
 
 cd dist
 

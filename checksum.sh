@@ -5,11 +5,10 @@ file=$(basename "${files[0]}")
 
 version=${TRAVIS_TAG:-local-build}
 project=$(echo $file | sed -e "s/_${version}.*$//")
-echo $version
-echo $project
+echo "Checksumming: $project, version $version"
 
 sha512_file="${project}_${version}_sha512-checksums.txt"
-echo $sha512_file
+echo "SHA512 file is $sha512_file"
 
 cd dist
 

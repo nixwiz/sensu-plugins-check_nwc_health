@@ -5,6 +5,7 @@ services:
 script:
 - ./build.sh
 deploy:
+  skip_cleanup: true
   - provider: script
     script: bash ./checksum.sh
     on:

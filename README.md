@@ -59,7 +59,8 @@ spec:
   - slack
   interval: 30
   output_metric_format: nagios_perfdata
-  output_metric_handlers: influxdb
+  output_metric_handlers:
+  - influxdb
   proxy_entity_name: "router.example.com"
   publish: true
   runtime_assets:
